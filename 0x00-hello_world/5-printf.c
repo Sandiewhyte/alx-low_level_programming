@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - main block
+ * main - Prints out a string in the printf function
  * Return: 0
  */
 int main(void)
