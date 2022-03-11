@@ -15,7 +15,7 @@
  */
 int main(void)
 {
-int i. j;
+int i, j;
 int a, b, c, d;
 
 for (i = 0; i < 100; i++)
@@ -43,9 +43,8 @@ putchar(32);
 }
 }
 }
-
+}
 putchar(10);
 
-return (0);
-}
+return(0);
 }
