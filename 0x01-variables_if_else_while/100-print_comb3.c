@@ -8,7 +8,7 @@
  * Numbers should be printed in ascending order, with two digits.
  * You can only use 'putchar'.
  * You can only use 'putchar' up to 5 times.
- * You are not allowed to use any any variable of type 'char'. 
+ * You are not allowed to use any any variable of type 'char'.
  * Return: 0
  */
 int main(void)
