@@ -3,7 +3,9 @@
 /**
  * main - prints the first 98 Fibonnaci numbers,starting with 1 and 2,
  *
- * Description: Prints from 1 to 98.
+ * Description: Write a program that finds and prints
+ * the first fibonacci numbers, starting with one and two followed by a new line.
+ * Prints from 1 to 98.
  * the numbers should be separated by a comma, followed by a space ,
  * You are allowed to use the standard library
  * You are not allowed to use any other library(You cannot use GMP etc...)
