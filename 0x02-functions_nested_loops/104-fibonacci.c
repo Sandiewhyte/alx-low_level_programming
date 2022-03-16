@@ -3,13 +3,16 @@
 /**
  * main - prints the first 98 Fibonnaci numbers,starting with 1 and 2,
  *
- * Description: Prints from 1- 98
+ * Description: Prints from 1 to 98.
  * the numbers should be separated by a comma, followed by a space ,
  * You are allowed to use the standard library
  * You are not allowed to use any other library(You cannot use GMP etc...)
- * You are not allowed to use long long, malloc
+ * You are not allowed to use long long, malloc.
+ * you are not allowed to use pointers.
+ * you are not allowed to use arrays/tables
+ * you are not allowed to use structures.
  * You are not allowed to hard code any Fibonnacci number (except for 1 and 2)
- * Return: Always(0) Success
+ * Return: Always(0) Success.
  */
 
 int main(void)
