@@ -1,9 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - prints fibonnaci numbers
+ * main - prints the first 98 Fibonnaci numbers,starting with 1 and 2,
  *
- * Description: prints from 1 to 98
+ * Description: Prints from 1- 98
+ * the numbers should be separated by a comma, followed by a space ,
+ * You are allowed to use the standard library
+ * You are not allowed to use any other library(You cannot use GMP etc...)
+ * You are not allowed to use long long, malloc,pointers,arrays/tables, or structures
+ * You are not allowed to hard code any Fibonnacci number (except for 1 and 2)
  * Return: Always(0) Success
  */
 
