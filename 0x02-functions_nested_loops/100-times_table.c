@@ -3,12 +3,9 @@
 *print_times_table - Prints the `n` times table, starting with 0.
 *Description: If `n` is greater than 15 or less than 0, print nothing.
 *@n: int type number
-Return: Always 0.
 */
 void print_times_table(int n)
 {
-	print_times_table(2);
-	return (0);
 	int x = 0, y, z;
 
 	if (n > 15 || n < 0)
