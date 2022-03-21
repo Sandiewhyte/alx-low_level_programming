@@ -2,11 +2,10 @@
 
 /**
  * puts2 - prints every character of a string
- * @str: A pointer to an int that will be changed
+ * @str: type
  * Return: void which means it is correct
- * 
+ *
  */
-
 void puts2(char *str)
 {
 	int i, j = 0;
