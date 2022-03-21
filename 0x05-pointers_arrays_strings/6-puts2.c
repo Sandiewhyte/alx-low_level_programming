@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * puts2 - prints one char out of 2
- * @str: type
+ * puts2 - prints every character of a string
+ * @str: A pointer to an int that will be changed
  *
+ * Return: void which means it is correct
  */
 
 void puts2(char *str)
@@ -20,5 +21,6 @@ void puts2(char *str)
 		_putchar(str[j]);
 		j = j + 2;
 	}
+	
 	_putchar('\n');
 }
