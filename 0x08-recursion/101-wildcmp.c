@@ -9,5 +9,7 @@
 int main(void)
 {
     int r;
+    ^
 
     y
+    ^
