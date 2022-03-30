@@ -1,5 +1,6 @@
 #include "main.h"
 
+* File: 100-is_palindrome.c 
 /* Solution credit goes to Sandra Isianya, cohort 5. */
 
 /**
