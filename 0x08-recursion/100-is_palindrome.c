@@ -1,10 +1,10 @@
 #include "main.h"
 
-/* Solution credit goes to Arthur Damm, cohort 8. */
+/* Solution credit goes to Sandra Isianya, cohort 5. */
 
 /**
  * wildcmp - compares two strings and returns 1 if the strings can be
- * considered identical, otherwise return 0
+ * considered palindrome, otherwise return 0
  * @s1: input string1
  * @s2: input string2
  * Return: 1 if true, 0 if false
