@@ -1,54 +1,50 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * _strlen - find length of string
- * @str: string
- * Return: length
+ * _strlen - compute the length of a NULL-terminated string
+ * @str: the string to measure
+ *
+ * Return: the length of str, or -1 if str is NULL
  */
-int _strlen(char *str)
+ssize_t _strlen(const char *str)
 {
-	int len;
+	ssize_t len = 0;
 
-	for (len = 0; str[len] != '\0'; len++)
-		;
+	if (!str)
+		return (-1);
+
+	while (*str++)
+		++len;
 
 	return (len);
 }
 
 /**
- * append_text_to_file - append text and only if file exists
- * @filename: file
- * @text_content: appends this content into file
- * Return: 1 on success, -1 on error
+ * append_text_to_file - append text to the end of a file
+ * @filename: the name of the file to append to
+ * @text_content: the data to append to filename
+ *
+ * Return: Upon success, return 1. Otherwise, return -1.
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
+	ssize_t b_written = 0;
 	int fd;
-	int n_wrote;
 
 	if (!filename)
 		return (-1);
 
-	/* open file if it exists */
 	fd = open(filename, O_WRONLY | O_APPEND);
-	if (fd == -1)
+
+	if (fd < 0)
 		return (-1);
 
-	/* if nothing to write, still successful */
-	if (!text_content)
-	{
-		close(fd);
-		return (1);
-	}
-
-	/* write */
-	n_wrote = write(fd, text_content, _strlen(text_content));
-	if (n_wrote == -1 || n_wrote != _strlen(text_content))
-	{
-		close(fd);
-		return (-1);
-	}
+	if (text_content)
+		b_written = write(fd, text_content, _strlen(text_content));
 
 	close(fd);
+
+	if (b_written < 0)
+		return (-1);
 	return (1);
 }
