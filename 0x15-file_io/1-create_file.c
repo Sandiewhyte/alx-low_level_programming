@@ -1,50 +1,55 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * _strlen - compute the length of a NULL-terminated string
- * @str: the string to measure
- *
- * Return: the length of str, or -1 if str is NULL
+ * _strlen - find length of string
+ * @str: string
+ * Return: length
  */
-ssize_t _strlen(const char *str)
+int _strlen(char *str)
 {
-	ssize_t len = 0;
+	int len;
 
-	if (!str)
-		return (-1);
-
-	while (*str++)
-		++len;
+	for (len = 0; str[len] != '\0'; len++)
+		;
 
 	return (len);
 }
 
 /**
- * create_file - create a file
- * @filename: the name of the file to create
- * @text_content: the data to write to filename
- *
- * Return: Upon success, return 1. Otherwise, return -1.
+ * create_file - creates file with permissions rw------- and writes content in
+ * if file already exists, don't change permissions and just truncate it
+ * @filename: name to give to new file
+ * @text_content: writes this content into file
+ * Return: 1 on success, -1 on error
  */
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t b_written = 0;
 	int fd;
+	int n_wrote;
 
 	if (!filename)
 		return (-1);
 
-	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
-
-	if (fd < 0)
+	/* create with permissions if file doesn't exist, else truncate */
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (fd == -1)
 		return (-1);
 
-	if (text_content)
-		b_written = write(fd, text_content, _strlen(text_content));
+	/* if nothing to write, just return newly created file */
+	if (!text_content)
+	{
+		close(fd);
+		return (1);
+	}
+
+	/* write */
+	n_wrote = write(fd, text_content, _strlen(text_content));
+	if (n_wrote == -1 || n_wrote != _strlen(text_content))
+	{
+		close(fd);
+		return (-1);
+	}
 
 	close(fd);
-
-	if (b_written < 0)
-		return (-1);
 	return (1);
 }
